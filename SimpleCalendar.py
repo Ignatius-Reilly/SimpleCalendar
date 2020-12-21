@@ -7,6 +7,15 @@ import subprocess as subp
 import calendar as cal
 import re
 
+
+##CHECK
+#Tal vez no definir 'kwargs = {}' y luego usar 'if kwargs'
+#read optional arguments as **kwargs
+kwargs = {}
+if __name__=='__main__':
+    if len(argv) >= 4:
+        kwargs = dict(arg.split('=') for arg in argv[3:])
+
 #Fields' values in the Latex template (list)
 templ_dayNumber_keys = ['FD1-1','FD1-2','FD1-3','FD1-4','FD1-5','FD1-6','FD1-7',
                         'FD2-1','FD2-2','FD2-3','FD2-4','FD2-5','FD2-6','FD2-7',
