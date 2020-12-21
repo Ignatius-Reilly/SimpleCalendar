@@ -56,10 +56,8 @@ templ_dayNumber_dic = {key:'' for key in templ_dayNumber_keys}
 #Day of the week
 DoW = {'Day1':'','Day2':'','Day3':'','Day4':'','Day5':'','Day6':'','Day7':''}
 
-#Number of blocks in rows
-FirstRow_blocks = {'W1-H':'','W1-V':''}
-FifthRow_blocks = {'W5-H':'','W5-V':''}
-SixthRow_blocks = {'W6-H':'','W6-V':''}
+#Number of blocks in rows 1, 5 and 6
+blocks_per_row = {'W1-H':'','W1-V':'','W5-H':'','W5-V':'','W6-H':'','W6-V':''}
 
 #Optional image in the background
 background_image = {'BackgroundImage':''}
@@ -78,5 +76,33 @@ def replace(rep_dict):
     pattern = re.compile("|".join(rep_dict.keys()))
     text = pattern.sub(lambda m: rep[re.escape(m.group(0))], text)
 
+#Count number of days in a given week of the month
+#i.e.: if the 1st week starts on Thu, day_counter(1stWeek) -> 4
+def day_counter(week):
+    return sum(type(day)==int for day in week)
+
 weeks = get_calendar(int(argv[1]), int(argv[2]))
 no_of_weeks = len(weeks)
+no_of_days_week1 = day_counter(weeks[0])
+if len(weeks) == 5:
+    no_of_days_week5 = day_counter(weeks[4])
+    no_of_days_week6 = 0
+elif len(weeks) > 5:
+    no_of_days_week5 = 7
+    no_of_days_week6 = day_counter(weeks[5])
+else:
+    no_of_days_week5 = 0
+    no_of_days_week6 = 0
+
+blocks_per_row['W1-H'] = no_of_days_week1
+blocks_per_row['W1-V'] = no_of_days_week1 + (no_of_days_week1 != 0)
+blocks_per_row['W5-H'] = no_of_days_week5
+blocks_per_row['W5-V'] = no_of_days_week5 + (no_of_days_week5 != 0)
+blocks_per_row['W6-H'] = no_of_days_week6
+blocks_per_row['W6-V'] = no_of_days_week6 + (no_of_days_week6 != 0)
+
+#Assign the right number to each day
+unrolled_DoM = [day for week in weeks for day in week]
+for day in range(len(unrolled_DoM)):
+    templ_dayNumber_dic[templ_dayNumber_keys[day]] = unrolled_DoM[day]
+print(templ_dayNumber_dic)
