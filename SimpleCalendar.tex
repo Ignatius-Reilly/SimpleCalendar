@@ -1,0 +1,79 @@
+\documentclass{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[a4paper,landscape]{geometry}
+\usepackage{eso-pic,graphicx}
+\usepackage{lmodern}
+
+\pagestyle{empty}
+
+\begin{document}
+\textsf
+{%
+\setlength{\unitlength}{1cm}%
+\begin{picture}(20,9)(1,-6)%
+	\linethickness{0.6mm}%
+	%2nd, 3rd and 4th weeks with seven days
+	\multiput(0,0)(0,-3){4}{\line(1,0){21}}%
+	\multiput(0,0)(3,0){8}{\line(0,-1){9}}%
+	%First week
+	\multiput(18,3)(3,0){1}{\line(1,0){3}}%
+	\multiput(18,3)(3,0){2}{\line(0,-1){3}}%
+	%5th week
+	\multiput(0,-12)(3,0){7}{\line(1,0){3}}%
+	\multiput(0,-9)(3,0){8}{\line(0,-1){3}}%
+	%6th week (only if 1st week starts in Sat or Sun)
+	\multiput(0,-15)(3,0){2}{\line(1,0){3}}%
+	\multiput(0,-12)(3,0){3}{\line(0,-1){3}}%
+	%Names of Days
+	\put(0,3.7){\parbox{3cm}{\centering \huge{Mon}}}%
+	\put(3,3.7){\parbox{3cm}{\centering \huge{Tue}}}%
+	\put(6,3.7){\parbox{3cm}{\centering \huge{Wed}}}%
+	\put(9,3.7){\parbox{3cm}{\centering \huge{Thu}}}%
+	\put(12,3.7){\parbox{3cm}{\centering \huge{Fri}}}%
+	\put(15,3.7){\parbox{3cm}{\centering \huge{Sat}}}%
+	\put(18,3.7){\parbox{3cm}{\centering \huge{Sun}}}%
+	%Numbers of days
+	\put(2.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-1}\end{flushright}}}%
+	\put(5.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-2}\end{flushright}}}%
+	\put(8.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-3}\end{flushright}}}%
+	\put(11.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-4}\end{flushright}}}%
+	\put(14.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-5}\end{flushright}}}%
+	\put(17.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-6}\end{flushright}}}%
+	\put(20.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-7}\end{flushright}}}%
+	\put(2.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-1}\end{flushright}}}%
+	\put(5.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-2}\end{flushright}}}%
+	\put(8.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-3}\end{flushright}}}%
+	\put(11.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-4}\end{flushright}}}%
+	\put(14.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-5}\end{flushright}}}%
+	\put(17.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-6}\end{flushright}}}%
+	\put(20.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-7}\end{flushright}}}%
+	\put(2.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-1}\end{flushright}}}%
+	\put(5.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-2}\end{flushright}}}%
+	\put(8.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-3}\end{flushright}}}%
+	\put(11.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-4}\end{flushright}}}%
+	\put(14.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-5}\end{flushright}}}%
+	\put(17.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-6}\end{flushright}}}%
+	\put(20.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-7}\end{flushright}}}%
+	\put(2.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-1}\end{flushright}}}%
+	\put(5.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-2}\end{flushright}}}%
+	\put(8.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-3}\end{flushright}}}%
+	\put(11.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-4}\end{flushright}}}%
+	\put(14.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-5}\end{flushright}}}%
+	\put(17.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-6}\end{flushright}}}%
+	\put(20.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-7}\end{flushright}}}%
+	\put(2.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-1}\end{flushright}}}%
+	\put(5.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-2}\end{flushright}}}%
+	\put(8.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-3}\end{flushright}}}%
+	\put(11.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-4}\end{flushright}}}%
+	\put(14.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-5}\end{flushright}}}%
+	\put(17.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-6}\end{flushright}}}%
+	\put(20.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-7}\end{flushright}}}%
+	\put(2.35,-12.55){\parbox{0.5cm}{\begin{flushright}\Large{FD6-1}\end{flushright}}}%
+	\put(5.35,-12.55){\parbox{0.5cm}{\begin{flushright}\Large{FD6-2}\end{flushright}}}%
+\end{picture}%
+}
+% Background image (optional)
+%{\centering\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{drosophila.jpg}}}
+\end{document}
+
