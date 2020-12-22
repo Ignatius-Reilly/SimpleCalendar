@@ -60,7 +60,7 @@ DoW = {'Day1':'','Day2':'','Day3':'','Day4':'','Day5':'','Day6':'','Day7':''}
 blocks_per_row = {'W1-H':'','W1-V':'','W5-H':'','W5-V':'','W6-H':'','W6-V':''}
 
 #Optional image in the background
-background_image = {'BackgroundImage':''}
+background_image = {'CommentSymbol':r'%', 'BackgroundImage':''}
 
 #get list of weeks with lists of seven days.
 def get_calendar(year, month):
@@ -106,3 +106,8 @@ unrolled_DoM = [day for week in weeks for day in week]
 for day in range(len(unrolled_DoM)):
     templ_dayNumber_dic[templ_dayNumber_keys[day]] = unrolled_DoM[day]
 print(templ_dayNumber_dic)
+
+#set a background image if requested
+if 'image' in kwargs:
+    background_image['CommentSymbol'] = ''
+    background_image['BackgroundImage'] = kwargs['image']
