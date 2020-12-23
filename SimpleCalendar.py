@@ -7,8 +7,6 @@ import subprocess as subp
 import calendar as cal
 import re
 
-##CHECK
-#Tal vez no definir 'kwargs = {}' y luego usar 'if kwargs'
 #read optional arguments as **kwargs
 kwargs = {}
 if __name__=='__main__':
@@ -53,14 +51,20 @@ templ_dayNumber_keys = ['FD1-1','FD1-2','FD1-3','FD1-4','FD1-5','FD1-6','FD1-7',
                         ]
 templ_dayNumber_dic = {key:'' for key in templ_dayNumber_keys}
 
+##TODO
 #Day of the week
-DoW = {'Day1':'','Day2':'','Day3':'','Day4':'','Day5':'','Day6':'','Day7':''}
+#DoW = {'Day1':'','Day2':'','Day3':'','Day4':'','Day5':'','Day6':'','Day7':''}
+DoW = {'Day1':NoD[0],'Day2':NoD[1],'Day3':NoD[2],'Day4':NoD[3],
+       'Day5':NoD[4],'Day6':NoD[5],'Day7':NoD[6]}
 
 #Number of blocks in rows 1, 5 and 6
 blocks_per_row = {'W1-H':'','W1-V':'','W5-H':'','W5-V':'','W6-H':'','W6-V':''}
 
 #Optional image in the background
 background_image = {'CommentSymbol':r'%', 'BackgroundImage':''}
+
+#All dictionaries about fields
+field_dics = [templ_dayNumber_dic, DoW, blocks_per_row, background_image]
 
 #get list of weeks with lists of seven days.
 def get_calendar(year, month):
@@ -94,20 +98,44 @@ else:
     no_of_days_week5 = 0
     no_of_days_week6 = 0
 
-blocks_per_row['W1-H'] = no_of_days_week1
-blocks_per_row['W1-V'] = no_of_days_week1 + (no_of_days_week1 != 0)
-blocks_per_row['W5-H'] = no_of_days_week5
-blocks_per_row['W5-V'] = no_of_days_week5 + (no_of_days_week5 != 0)
-blocks_per_row['W6-H'] = no_of_days_week6
-blocks_per_row['W6-V'] = no_of_days_week6 + (no_of_days_week6 != 0)
+blocks_per_row['W1-H'] = str(no_of_days_week1)
+blocks_per_row['W1-V'] = str(no_of_days_week1 + (no_of_days_week1 != 0))
+blocks_per_row['W5-H'] = str(no_of_days_week5)
+blocks_per_row['W5-V'] = str(no_of_days_week5 + (no_of_days_week5 != 0))
+blocks_per_row['W6-H'] = str(no_of_days_week6)
+blocks_per_row['W6-V'] = str(no_of_days_week6 + (no_of_days_week6 != 0))
 
 #Assign the right number to each day
 unrolled_DoM = [day for week in weeks for day in week]
 for day in range(len(unrolled_DoM)):
-    templ_dayNumber_dic[templ_dayNumber_keys[day]] = unrolled_DoM[day]
-print(templ_dayNumber_dic)
+    templ_dayNumber_dic[templ_dayNumber_keys[day]] = str(unrolled_DoM[day])
 
 #set a background image if requested
 if 'image' in kwargs:
     background_image['CommentSymbol'] = ''
     background_image['BackgroundImage'] = kwargs['image']
+
+#read template
+with open('SimpleCalendar.tex') as template:
+    almanac = template.read()
+
+#Modify template
+for dic in field_dics:
+    for key in dic.keys():
+        almanac = almanac.replace(key, dic[key])
+
+#generates tex file
+filename = 'SimpleCalendar_' + argv[1] + '_' + argv[2]
+with open(filename+'.tex' ,'w') as file:
+    file.write(almanac)
+
+#print pdf file
+subp.run(['pdflatex', filename+'.tex'])
+
+#eliminate auxiliar files
+if os.path.exists(filename+'.log'):
+    os.remove(filename+'.log')
+if os.path.exists(filename+'.aux'):
+    os.remove(filename+'.aux')
+if os.path.exists(filename+'.tex'):
+    os.remove(filename+'.tex')
