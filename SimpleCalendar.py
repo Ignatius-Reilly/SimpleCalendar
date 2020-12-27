@@ -47,7 +47,7 @@ templ_dayNumber_keys = ['FD1-1','FD1-2','FD1-3','FD1-4','FD1-5','FD1-6','FD1-7',
                         'FD3-1','FD3-2','FD3-3','FD3-4','FD3-5','FD3-6','FD3-7',
                         'FD4-1','FD4-2','FD4-3','FD4-4','FD4-5','FD4-6','FD4-7',
                         'FD5-1','FD5-2','FD5-3','FD5-4','FD5-5','FD5-6','FD5-7',
-                        'FD6-1','FD6-2'
+                        'FD6-1','FD6-2','FD6-X','FD6-X','FD6-X','FD6-X','FD6-X'
                         ]
 templ_dayNumber_dic = {key:'' for key in templ_dayNumber_keys}
 
