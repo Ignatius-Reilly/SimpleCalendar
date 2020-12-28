@@ -7,70 +7,72 @@
 
 \pagestyle{empty}
 
+\newcommand{\dayformat}[1]{\textsf{\Large{\textbf{#1}}}}
+\newcommand{\numberformat}[1]{\Large{\textbf{#1}}}
+
+
 \begin{document}
-\textsf
 {%
 \setlength{\unitlength}{1cm}%
-\begin{picture}(20,9)(1,-6)%
+\begin{picture}(21,9.5)(2,-7)%
 	\linethickness{0.6mm}%
 	%2nd, 3rd and 4th weeks with seven days
-	\multiput(0,0)(0,-3){4}{\line(1,0){21}}%
-	\multiput(0,0)(3,0){8}{\line(0,-1){9}}%
+	\multiput(0,0)(0,-3.5){4}{\line(1,0){24.5}}%
+	\multiput(0,0)(3.5,0){8}{\line(0,-1){10.5}}%
 	%First week
-	\multiput(21,3)(-3,0){W1-H}{\line(-1,0){3}}%
-	\multiput(21,3)(-3,0){W1-V}{\line(0,-1){3}}%
+	\multiput(24.5,3.5)(-3.5,0){W1-H}{\line(-1,0){3.5}}%
+	\multiput(24.5,3.5)(-3.5,0){W1-V}{\line(0,-1){3.5}}%
 	%5th week
-	\multiput(0,-12)(3,0){W5-H}{\line(1,0){3}}%
-	\multiput(0,-9)(3,0){W5-V}{\line(0,-1){3}}%
+	\multiput(0,-14)(3.5,0){W5-H}{\line(1,0){3.5}}%
+	\multiput(0,-10.5)(3.5,0){W5-V}{\line(0,-1){3.5}}%
 	%6th week (only if 1st week starts in Sat or Sun)
-	\multiput(0,-15)(3,0){W6-H}{\line(1,0){3}}%
-	\multiput(0,-12)(3,0){W6-V}{\line(0,-1){3}}%
+	\multiput(0.25,-13.5)(3.5,0){W6-H}{\line(4,3){3}}%
 	%Names of Days
-	\put(0,3.7){\parbox{3cm}{\centering \huge{Day1}}}%
-	\put(3,3.7){\parbox{3cm}{\centering \huge{Day2}}}%
-	\put(6,3.7){\parbox{3cm}{\centering \huge{Day3}}}%
-	\put(9,3.7){\parbox{3cm}{\centering \huge{Day4}}}%
-	\put(12,3.7){\parbox{3cm}{\centering \huge{Day5}}}%
-	\put(15,3.7){\parbox{3cm}{\centering \huge{Day6}}}%
-	\put(18,3.7){\parbox{3cm}{\centering \huge{Day7}}}%
+	\put(0,4){\parbox{3.5cm}{\centering \dayformat{Day1}}}%
+	\put(3.5,4){\parbox{3.5cm}{\centering \dayformat{Day2}}}%
+	\put(7,4){\parbox{3.5cm}{\centering \dayformat{Day3}}}%
+	\put(10.5,4){\parbox{3.5cm}{\centering \dayformat{Day4}}}%
+	\put(14,4){\parbox{3.5cm}{\centering \dayformat{Day5}}}%
+	\put(17.5,4){\parbox{3.5cm}{\centering \dayformat{Day6}}}%
+	\put(21,4){\parbox{3.5cm}{\centering \dayformat{Day7}}}%
 	%Numbers of days
-	\put(2.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-1}\end{flushright}}}%
-	\put(5.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-2}\end{flushright}}}%
-	\put(8.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-3}\end{flushright}}}%
-	\put(11.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-4}\end{flushright}}}%
-	\put(14.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-5}\end{flushright}}}%
-	\put(17.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-6}\end{flushright}}}%
-	\put(20.35, 2.45){\parbox{0.5cm}{\begin{flushright}\Large{FD1-7}\end{flushright}}}%
-	\put(2.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-1}\end{flushright}}}%
-	\put(5.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-2}\end{flushright}}}%
-	\put(8.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-3}\end{flushright}}}%
-	\put(11.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-4}\end{flushright}}}%
-	\put(14.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-5}\end{flushright}}}%
-	\put(17.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-6}\end{flushright}}}%
-	\put(20.35,-0.55){\parbox{0.5cm}{\begin{flushright}\Large{FD2-7}\end{flushright}}}%
-	\put(2.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-1}\end{flushright}}}%
-	\put(5.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-2}\end{flushright}}}%
-	\put(8.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-3}\end{flushright}}}%
-	\put(11.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-4}\end{flushright}}}%
-	\put(14.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-5}\end{flushright}}}%
-	\put(17.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-6}\end{flushright}}}%
-	\put(20.35,-3.55){\parbox{0.5cm}{\begin{flushright}\Large{FD3-7}\end{flushright}}}%
-	\put(2.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-1}\end{flushright}}}%
-	\put(5.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-2}\end{flushright}}}%
-	\put(8.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-3}\end{flushright}}}%
-	\put(11.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-4}\end{flushright}}}%
-	\put(14.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-5}\end{flushright}}}%
-	\put(17.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-6}\end{flushright}}}%
-	\put(20.35,-6.55){\parbox{0.5cm}{\begin{flushright}\Large{FD4-7}\end{flushright}}}%
-	\put(2.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-1}\end{flushright}}}%
-	\put(5.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-2}\end{flushright}}}%
-	\put(8.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-3}\end{flushright}}}%
-	\put(11.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-4}\end{flushright}}}%
-	\put(14.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-5}\end{flushright}}}%
-	\put(17.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-6}\end{flushright}}}%
-	\put(20.35,-9.55){\parbox{0.5cm}{\begin{flushright}\Large{FD5-7}\end{flushright}}}%
-	\put(2.35,-12.55){\parbox{0.5cm}{\begin{flushright}\Large{FD6-1}\end{flushright}}}%
-	\put(5.35,-12.55){\parbox{0.5cm}{\begin{flushright}\Large{FD6-2}\end{flushright}}}%
+	\put(2.65, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-1}\end{flushright}}}%
+	\put(6.15, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-2}\end{flushright}}}%
+	\put(9.65, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-3}\end{flushright}}}%
+	\put(13.15, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-4}\end{flushright}}}%
+	\put(16.65, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-5}\end{flushright}}}%
+	\put(20.15, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-6}\end{flushright}}}%
+	\put(23.65, 2.95){\parbox{0.7cm}{\begin{flushright}\numberformat{FD1-7}\end{flushright}}}%
+	\put(2.65,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-1}\end{flushright}}}%
+	\put(6.15,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-2}\end{flushright}}}%
+	\put(9.65,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-3}\end{flushright}}}%
+	\put(13.15,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-4}\end{flushright}}}%
+	\put(16.65,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-5}\end{flushright}}}%
+	\put(20.15,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-6}\end{flushright}}}%
+	\put(23.65,-0.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD2-7}\end{flushright}}}%
+	\put(2.65,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-1}\end{flushright}}}%
+	\put(6.15,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-2}\end{flushright}}}%
+	\put(9.65,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-3}\end{flushright}}}%
+	\put(13.15,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-4}\end{flushright}}}%
+	\put(16.65,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-5}\end{flushright}}}%
+	\put(20.15,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-6}\end{flushright}}}%
+	\put(23.65,-4.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD3-7}\end{flushright}}}%
+	\put(2.65,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-1}\end{flushright}}}%
+	\put(6.15,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-2}\end{flushright}}}%
+	\put(9.65,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-3}\end{flushright}}}%
+	\put(13.15,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-4}\end{flushright}}}%
+	\put(16.65,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-5}\end{flushright}}}%
+	\put(20.15,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-6}\end{flushright}}}%
+	\put(23.65,-7.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD4-7}\end{flushright}}}%
+	\put(2.65,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-1}\end{flushright}}}%
+	\put(6.15,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-2}\end{flushright}}}%
+	\put(9.65,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-3}\end{flushright}}}%
+	\put(13.15,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-4}\end{flushright}}}%
+	\put(16.65,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-5}\end{flushright}}}%
+	\put(20.15,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-6}\end{flushright}}}%
+	\put(23.65,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-7}\end{flushright}}}%
+	\put(0.65,-13.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD6-1}\end{flushright}}}%
+	\put(4.15,-13.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD6-2}\end{flushright}}}%
 \end{picture}%
 }
 % Background image (optional)
