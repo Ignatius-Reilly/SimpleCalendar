@@ -9,12 +9,13 @@
 
 \newcommand{\dayformat}[1]{\textsf{\Large{\textbf{#1}}}}
 \newcommand{\numberformat}[1]{\Large{\textbf{#1}}}
+\newcommand{\monthformat}[1]{\huge{\textsf{\textbf{\centering{#1}}}}}
 
 
 \begin{document}
 {%
 \setlength{\unitlength}{1cm}%
-\begin{picture}(21,9.5)(2,-7)%
+\begin{picture}(21,9.5)(3,-7)%
 	\linethickness{0.6mm}%
 	%2nd, 3rd and 4th weeks with seven days
 	\multiput(0,0)(0,-3.5){4}{\line(1,0){24.5}}%
@@ -73,9 +74,11 @@
 	\put(23.65,-11.05){\parbox{0.7cm}{\begin{flushright}\numberformat{FD5-7}\end{flushright}}}%
 	\put(0.65,-13.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD6-1}\end{flushright}}}%
 	\put(4.15,-13.55){\parbox{0.7cm}{\begin{flushright}\numberformat{FD6-2}\end{flushright}}}%
+	%Month & Year
+	\put(25.5,3){\parbox[t][][s]{6ex}{\monthformat{F-MONTH\\\vspace{5ex}F-YEAR\\}}}
 \end{picture}%
 }
 % Background image (optional)
 CommentSymbol{\centering\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth]{BackgroundImage}}}
 \end{document}
-
+ 

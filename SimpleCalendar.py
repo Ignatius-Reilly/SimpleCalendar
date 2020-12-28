@@ -14,12 +14,42 @@ if __name__=='__main__':
         kwargs = dict(arg.split('=') for arg in argv[3:])
 
 #Name of days
-eng = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun']
-eng_l = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
-esp = ['Lun','Mar','Mie','Jue','Vie','Sab','Dom']
-esp_l = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo']
-deu = ['Mo','Di','Mi','Do','Fr','Sa','So']
-deu_l = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag']
+eng = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun',
+       r'J\\A\\N\\U\\A\\R\\Y',r'F\\E\\B\\R\\U\\A\\R\\Y',r'M\\A\\R\\C\\H',
+       r'A\\P\\R\\I\\L',r'M\\A\\Y',r'J\\U\\N\\E',r'J\\U\\L\\Y',
+       r'A\\U\\G\\U\\S\\T',r'S\\E\\P\\T\\E\\M\\B\\E\\R',
+       r'O\\C\\T\\O\\B\\E\\R',r'N\\O\\V\\E\\M\\B\\E\\R',
+       r'D\\E\\C\\E\\M\\B\\E\\R']
+eng_l = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday',
+         r'J\\A\\N\\U\\A\\R\\Y',r'F\\E\\B\\R\\U\\A\\R\\Y',r'M\\A\\R\\C\\H',
+         r'A\\P\\R\\I\\L',r'M\\A\\Y',r'J\\U\\N\\E',r'J\\U\\L\\Y',
+         r'A\\U\\G\\U\\S\\T',r'S\\E\\P\\T\\E\\M\\B\\E\\R',
+         r'O\\C\\T\\O\\B\\E\\R',r'N\\O\\V\\E\\M\\B\\E\\R',
+         r'D\\E\\C\\E\\M\\B\\E\\R']
+esp = ['Lun','Mar','Mie','Jue','Vie','Sab','Dom',
+       r'E\\N\\E\\R\\O',r'F\\E\\B\\R\\E\\R\\O',r'M\\A\\R\\Z\\O',
+       r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',R'J\\U\\L\\I\\O',
+       r'A\\G\\O\\S\\T\\O',r'S\\E\\P\\T\\I\\E\\M\\B\\R\\E',
+       r'O\\C\\T\\U\\B\\R\\E',r'N\\O\\V\\I\\E\\M\\B\\R\\E',
+       r'D\\I\\C\\I\\E\\M\\B\\R\\E']
+esp_l = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo',
+         r'E\\N\\E\\R\\O',r'F\\E\\B\\R\\E\\R\\O',r'M\\A\\R\\Z\\O',
+         r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',R'J\\U\\L\\I\\O',
+         r'A\\G\\O\\S\\T\\O',r'S\\E\\P\\T\\I\\E\\M\\B\\R\\E',
+         r'O\\C\\T\\U\\B\\R\\E',r'N\\O\\V\\I\\E\\M\\B\\R\\E',
+         r'D\\I\\C\\I\\E\\M\\B\\R\\E']
+deu = ['Mo','Di','Mi','Do','Fr','Sa','So',
+       r'J\\A\\N\\U\\A\\R',r'F\\E\\B\\R\\U\\A\\R',r'M\\Ä\\R\\Z',
+       r'A\\P\\R\\I\\L',r'M\\A\\I',r'J\\U\\N\\I',r'J\\U\\L\\I',
+       r'A\\U\\G\\U\\S\\T',r'S\\E\\P\\T\\E\\M\\B\\E\\R',
+       r'O\\K\\T\\O\\B\\E\\R',r'N\\O\\V\\E\\M\\B\\E\\R',
+       r'D\\E\\Z\\E\\M\\B\\E\\R']
+deu_l = ['Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag','Sonntag',
+         r'J\\A\\N\\U\\A\\R',r'F\\E\\B\\R\\U\\A\\R',r'M\\Ä\\R\\Z',
+         r'A\\P\\R\\I\\L',r'M\\A\\I',r'J\\U\\N\\I',r'J\\U\\L\\I',
+         r'A\\U\\G\\U\\S\\T',r'S\\E\\P\\T\\E\\M\\B\\E\\R',
+         r'O\\K\\T\\O\\B\\E\\R',r'N\\O\\V\\E\\M\\B\\E\\R',
+         r'D\\E\\Z\\E\\M\\B\\E\\R']
 
 if 'lang' in kwargs:
     if kwargs['lang'] == 'eng':
@@ -60,11 +90,15 @@ DoW = {'Day1':NoD[0],'Day2':NoD[1],'Day3':NoD[2],'Day4':NoD[3],
 #Number of blocks in rows 1, 5 and 6
 blocks_per_row = {'W1-H':'','W1-V':'','W5-H':'','W5-V':'','W6-H':'','W6-V':''}
 
+#Month & Year
+month_and_year = {'F-MONTH':NoD[int(argv[2])+6],
+                  'F-YEAR': r'\\'.join([char for char in argv[1]])}
+
 #Optional image in the background
 background_image = {'CommentSymbol':r'%', 'BackgroundImage':''}
 
 #All dictionaries about fields
-field_dics = [templ_dayNumber_dic, DoW, blocks_per_row, background_image]
+field_dics = [templ_dayNumber_dic, DoW, blocks_per_row, background_image, month_and_year]
 
 #get list of weeks with lists of seven days.
 def get_calendar(year, month):
