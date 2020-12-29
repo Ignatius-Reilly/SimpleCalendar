@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
-r""" """
+r"""Print a pdf calendar
+
+SimpleCalendar.py YYYY MM lang=eng image=''
+
+lang sets the language, English by default
+image sets a background image if a file name or path is given.
+
+Uses SimpleCalendar.tex as a template, output is located in same folder as
+SimpleCalendar.tex and SimpleCalendar.py. Path for a background image can be
+relative to that folder.
+"""
 
 from sys import argv
 import os
@@ -14,6 +24,10 @@ if __name__=='__main__':
         kwargs = dict(arg.split('=') for arg in argv[3:])
 
 #Name of days
+"""More languages can be added by copying the pattern and adding them to
+the conditional block. The default language can be redefined
+in the conditional block"""
+
 eng = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun',
        r'J\\A\\N\\U\\A\\R\\Y',r'F\\E\\B\\R\\U\\A\\R\\Y',r'M\\A\\R\\C\\H',
        r'A\\P\\R\\I\\L',r'M\\A\\Y',r'J\\U\\N\\E',r'J\\U\\L\\Y',
@@ -65,7 +79,7 @@ if 'lang' in kwargs:
     elif kwargs['lang'] == 'deu_l':
         NoD = deu_l
     else:
-        NoD = eng
+        NoD = eng   # Default language
         print('Language ',kwargs['lang'],' is not supported')
 else:
     NoD = eng
@@ -81,9 +95,7 @@ templ_dayNumber_keys = ['FD1-1','FD1-2','FD1-3','FD1-4','FD1-5','FD1-6','FD1-7',
                         ]
 templ_dayNumber_dic = {key:'' for key in templ_dayNumber_keys}
 
-##TODO
 #Day of the week
-#DoW = {'Day1':'','Day2':'','Day3':'','Day4':'','Day5':'','Day6':'','Day7':''}
 DoW = {'Day1':NoD[0],'Day2':NoD[1],'Day3':NoD[2],'Day4':NoD[3],
        'Day5':NoD[4],'Day6':NoD[5],'Day7':NoD[6]}
 
@@ -98,7 +110,8 @@ month_and_year = {'F-MONTH':NoD[int(argv[2])+6],
 background_image = {'CommentSymbol':r'%', 'BackgroundImage':''}
 
 #All dictionaries about fields
-field_dics = [templ_dayNumber_dic, DoW, blocks_per_row, background_image, month_and_year]
+field_dics = [templ_dayNumber_dic, DoW, blocks_per_row, background_image,
+              month_and_year]
 
 #get list of weeks with lists of seven days.
 def get_calendar(year, month):
