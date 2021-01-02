@@ -1,0 +1,20 @@
+.gitignore
+.tmp
+Thumbs.db
+
+# Archivos auxiliares generados por LaTeX
+*.log
+*.aux
+*.gz
+
+*.pdf
+*.txt
+
+# Imágenes
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.bmp
+
+!Examples/*
