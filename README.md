@@ -24,7 +24,7 @@ Both SimpleCalendar.py and the LaTeX template SimpleCalendar.tex should be in th
 Make sure SimpleCalendar.py has permission for execution.
 Then just call it as
 ```
-./SimpleCalendar.py YYYY MM`
+./SimpleCalendar.py YYYY MM
 ```
 
 To change language or add a background image:
