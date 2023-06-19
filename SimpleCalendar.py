@@ -19,9 +19,8 @@ import re
 
 #read optional arguments as **kwargs
 kwargs = {}
-if __name__=='__main__':
-    if len(argv) >= 4:
-        kwargs = dict(arg.split('=') for arg in argv[3:])
+if len(argv) >= 4:
+    kwargs = dict(arg.split('=') for arg in argv[3:])
 
 #Name of days
 """More languages can be added by copying the pattern and adding them to
