@@ -15,8 +15,6 @@ Language can be configured. Right now it supports:
 
 but it's very easy to add another!!
 
-Also, a background image can be added!
-
 
 ### How to use it:
 
@@ -27,11 +25,10 @@ Then just call it as
 ./SimpleCalendar.py YYYY MM
 ```
 
-To change language or add a background image:
+To change language:
 ```
-./SimpleCalendar.py YYYY MM lang=<language> image=<filename>
+./SimpleCalendar.py YYYY MM lang=<language>
 ```
-![Example](https://github.com/Ignatius-Reilly/SimpleCalendar/blob/main/Examples/Example2.png)
 
 The languages supported in the current version are:
 * `eng` (deafualt): Mon Tue...
