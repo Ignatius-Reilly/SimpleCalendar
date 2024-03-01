@@ -41,13 +41,13 @@ eng_l = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday',
          r'D\\E\\C\\E\\M\\B\\E\\R']
 esp = ['Lun','Mar','Mie','Jue','Vie','Sab','Dom',
        r'E\\N\\E\\R\\O',r'F\\E\\B\\R\\E\\R\\O',r'M\\A\\R\\Z\\O',
-       r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',R'J\\U\\L\\I\\O',
+       r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',r'J\\U\\L\\I\\O',
        r'A\\G\\O\\S\\T\\O',r'S\\E\\P\\T\\I\\E\\M\\B\\R\\E',
        r'O\\C\\T\\U\\B\\R\\E',r'N\\O\\V\\I\\E\\M\\B\\R\\E',
        r'D\\I\\C\\I\\E\\M\\B\\R\\E']
 esp_l = ['Lunes','Martes','Miércoles','Jueves','Viernes','Sábado','Domingo',
          r'E\\N\\E\\R\\O',r'F\\E\\B\\R\\E\\R\\O',r'M\\A\\R\\Z\\O',
-         r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',R'J\\U\\L\\I\\O',
+         r'A\\B\\R\\I\\L',r'M\\A\\Y\\O',r'J\\U\\N\\I\\O',r'J\\U\\L\\I\\O',
          r'A\\G\\O\\S\\T\\O',r'S\\E\\P\\T\\I\\E\\M\\B\\R\\E',
          r'O\\C\\T\\U\\B\\R\\E',r'N\\O\\V\\I\\E\\M\\B\\R\\E',
          r'D\\I\\C\\I\\E\\M\\B\\R\\E']
