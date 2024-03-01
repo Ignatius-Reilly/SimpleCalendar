@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
 r"""Print a pdf calendar
 
-SimpleCalendar.py YYYY MM lang=eng image=''
+SimpleCalendar.py YYYY MM lang=eng
 
-lang sets the language, English by default
-image sets a background image if a file name or path is given.
+lang sets the language, English by default.
 
 Uses SimpleCalendar.tex as a template, output is located in same folder as
-SimpleCalendar.tex and SimpleCalendar.py. Path for a background image can be
-relative to that folder.
+SimpleCalendar.tex and SimpleCalendar.py.
 """
 
 from sys import argv
@@ -159,11 +157,6 @@ blocks_per_row['W6-V'] = str(no_of_days_week6 + (no_of_days_week6 != 0))
 unrolled_DoM = [day for week in weeks for day in week]
 for day in range(len(unrolled_DoM)):
     templ_dayNumber_dic[templ_dayNumber_keys[day]] = str(unrolled_DoM[day])
-
-#set a background image if requested
-if 'image' in kwargs:
-    background_image['CommentSymbol'] = ''
-    background_image['BackgroundImage'] = kwargs['image']
 
 #read template
 with open('SimpleCalendar.tex') as template:
