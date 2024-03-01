@@ -1,7 +1,7 @@
 ## Simple Calendar
 
 Prints a grid with minimun design for a specified month and year in a pdf file.
-Usefull as a monthly planner, but can be easily upgraded to cover a whole year.
+Useful as a monthly planner, but can be easily upgraded to cover a whole year.
 
 ![Example](https://github.com/Ignatius-Reilly/SimpleCalendar/blob/main/Examples/Example1.png)
 
